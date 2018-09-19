@@ -26,9 +26,8 @@ def input_to_index(input)
 end
 
 
-def move(board,input)
-  board[9] = "X"
-  board[0] = "O"
+def move(board,index)
+
 end
 
 
@@ -36,10 +35,15 @@ def turn(board)
   puts "Please enter 1-9:"
   desired_move = gets.strip
   desired_move = input_to_index(desired_move)
+  if input_to_index
+    next
+  else
+    puts "invalid input, please enter 1-9"
+  end
   if valid_move?(board, desired_move)
     move(board,desired_move)
   else
-    puts "This position is either taken or invalid"
+    puts "This position is taken"
     turn(board)
   end
   display_board(board)
