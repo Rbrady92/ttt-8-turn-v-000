@@ -38,7 +38,7 @@ def turn(board)
 
   if valid_move?(board, desired_move)
     move(board,desired_move)
-    display_board
+    display_board(board)
   else
     puts "This position is taken is taken or invalid"
     turn(board)
