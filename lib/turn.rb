@@ -37,7 +37,7 @@ def turn(board)
   desired_move = input_to_index(desired_move)
 
   if valid_move?(board, desired_move)
-    move(board,desired_move)
+    move(board,desired_move, manual_input)
     display_board(board)
   else
     puts "This position is taken is taken or invalid"
