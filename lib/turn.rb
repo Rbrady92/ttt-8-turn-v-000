@@ -8,17 +8,17 @@ end
 
 
 def position_taken?(board, index)
-  if board[index] == " " || board[index] == "" || board[index] == nil
-    return false
-  end
-  return true
-end
-
-def valid_move?(board,index)
-  if !position_taken?(board, index) && index < 10 && index > 0
+  if !(board[index] == " " || board[index] == "" || board[index] == nil)
     return true
   end
   return false
+end
+
+def valid_move?(board,index)
+  if position_taken?(board, index) && index < 10 && index > 0
+    return false
+  end
+  return true
 end
 
 def input_to_index(input)
@@ -40,7 +40,7 @@ def turn(board)
     move(board,desired_move)
     display_board
   else
-    puts "This position is taken"
+    puts "This position is taken is taken or invalid"
     turn(board)
   end
 end
